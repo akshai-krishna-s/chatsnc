@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-dark text-gray-light">ChatSNC</div>
+  <div class="text-gray-light flex-1">hey</div>
 </template>
 
 <script lang="ts" setup></script>

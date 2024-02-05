@@ -9,6 +9,10 @@ export default {
         gray: '#414458',
         'gray-medium': '#282A36',
         'gray-light': '#C3CADB',
+        shadow: 'rgba(82, 88, 123, 0.32)',
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
       },
     },
   },

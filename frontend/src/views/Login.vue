@@ -3,7 +3,7 @@
     <div class="flex-1 overflow-hidden">
       <div class="relative h-full">
         <div class="flex h-full flex-col items-center justify-center">
-          <form class="flex flex-col gap-3 mt- bg-gray-medium items-center px-10 py-8 rounded-md" @submit.prevent="loginUser">
+          <form class="flex flex-col gap-3 bg-gray-medium items-center px-10 py-8 rounded-md" @submit.prevent="loginUser">
             <p class="text-center text-2xl font-medium mb-3">Login to ChatSNC</p>
             <div class="flex flex-col gap-1">
               <label for="email" class="text-base">Email</label>
@@ -16,7 +16,7 @@
             <button class="text-gray-medium flex justify-center text-base bg-gray-light w-fit px-4 py-1 font-medium rounded-md">
               <p v-if="!loading">Login</p>
               <div v-else>
-                <svg class="w-6 h-6 text-gray-medium animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 mx-2 text-gray-medium animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-10" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>

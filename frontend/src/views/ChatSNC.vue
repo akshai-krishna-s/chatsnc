@@ -9,37 +9,62 @@
       </div> -->
       <div class="relative h-full">
         <div class="h-full w-full overflow-y-auto">
-          <div class="flex flex-col md:w-3/6 md:mx-auto px-4 md:px-0">
-            <router-link class="text-blue-primary" to="/login">Login</router-link>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique.
-            Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit?
-            Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut
-            itaque quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore
-            architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda
-            repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora,
-            quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias
-            repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque
-            repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique. Labore
-            velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem,
-            nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque
-            quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore
-            architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda
-            repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora,
-            quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias
-            repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque
-            repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique. Labore
-            velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem,
-            nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque
-            quo quas perferendis, tempora, quidem possimus similique. Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore
-            architecto ab optio quia alias repellendus. Aut nulla nam odit? Autem, nam alias sed consectetur assumenda repellendus aut provident!
+          <div class="flex flex-col gap-3 md:w-3/6 md:mx-auto px-4 py-4 md:px-0">
+            <div>
+              <p class="font-normal text-base">You</p>
+              <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+            </div>
+            <div>
+              <p class="font-normal text-base">ChatSNC</p>
+              <p class="font-light text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
+                minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
+              </p>
+            </div>
+            <div>
+              <p class="font-normal text-base">You</p>
+              <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+            </div>
+            <div>
+              <p class="font-normal text-base">ChatSNC</p>
+              <p class="font-light text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
+                minus, alias blanditiis pariatur modi
+              </p>
+            </div>
+            <div>
+              <p class="font-normal text-base">You</p>
+              <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+            </div>
+            <div>
+              <p class="font-normal text-base">ChatSNC</p>
+              <p class="font-light text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
+                minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
+              </p>
+            </div>
+            <div>
+              <p class="font-normal text-base">You</p>
+              <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+            </div>
+            <div>
+              <p class="font-normal text-base">ChatSNC</p>
+              <p class="font-light text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
+                minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
+              </p>
+            </div>
+            <div>
+              <p class="font-normal text-base">You</p>
+              <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+            </div>
+            <div>
+              <p class="font-normal text-base">ChatSNC</p>
+              <p class="font-light text-sm">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
+                minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
+              </p>
+            </div>
           </div>
         </div>
       </div>

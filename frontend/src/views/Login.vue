@@ -14,6 +14,7 @@
               <input type="password" id="password" name="password" class="bg-transparent border h-8 rounded-md w-60 pl-2 focus:outline-none focus:ring-1 ring-slate-300" v-model="data.password" />
             </div>
             <button class="text-gray-medium text-base bg-gray-light w-fit px-4 py-1 font-medium rounded-md">Login</button>
+            <p v-if="error" class="text-red-500 text-sm">{{ error }}</p>
             <p class="text-sm">Don't have an account? <router-link class="text-blue-primary" to="/register">Register</router-link></p>
           </form>
         </div>

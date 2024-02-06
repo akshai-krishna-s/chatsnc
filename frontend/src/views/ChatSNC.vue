@@ -71,4 +71,17 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
+import { onMounted } from 'vue'
+import { isTokenExpired } from '../utils'
+
+const router = useRouter()
+
+onMounted(() => {
+  const token = localStorage.getItem('token')
+  if (!token || isTokenExpired(token)) {
+    router.push('/login')
+  }
+})
+</script>

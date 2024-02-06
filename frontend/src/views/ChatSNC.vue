@@ -4,7 +4,7 @@
       <!-- <div class="relative h-full">
         <div class="absolute left-0 right-0"><div class="h-1.5"></div></div>
         <div class="flex h-full flex-col items-center justify-center">
-          <div class="mb-5 text-2xl font-medium">Ask about SN College...</div>
+          <div class="text-2xl font-medium">Ask about SN College...</div>
         </div>
       </div> -->
       <div class="relative h-full">

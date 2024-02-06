@@ -12,6 +12,7 @@ app = FastAPI()
 
 origins = [
     "http://chatsnc.vercel.app",
+    "https://chatsnc.vercel.app",
     "http://localhost:5173",
 ]
 

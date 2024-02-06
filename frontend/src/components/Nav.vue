@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full px-8 md:px-12 flex sticky top-0 z-10 min-h-[40px] shadow-md shadow-shadow py-3 justify-between items-center">
+  <div class="w-full px-4 md:px-16 flex sticky top-0 z-10 min-h-[40px] shadow-md shadow-shadow py-3 justify-between items-center">
     <p class="text-xl font-bold">ChatSNC</p>
     <div v-if="isUserInHomePage()" class="cursor-pointer" @click="logoutUser">
       <svg width="36" height="36" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">

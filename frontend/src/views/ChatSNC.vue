@@ -10,6 +10,7 @@
       <div class="relative h-full">
         <div class="h-full w-full overflow-y-auto">
           <div class="flex flex-col md:w-3/6 md:mx-auto px-4 md:px-0">
+            <router-link class="text-blue-primary" to="/login">Login</router-link>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut itaque quo quas perferendis, tempora, quidem possimus similique.
             Labore velit incidunt omnis dolore qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veniam. Tempore architecto ab optio quia alias repellendus. Aut nulla nam odit?
             Autem, nam alias sed consectetur assumenda repellendus aut provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio atque repellat debitis accusantium minima aut

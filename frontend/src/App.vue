@@ -4,8 +4,12 @@ import Nav from './components/Nav.vue'
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col bg-gray-dark text-gray-light font-roboto font-medium">
-    <Nav />
-    <RouterView />
+  <div class="relative h-full flex w-full text-gray-light overflow-hidden font-roboto">
+    <div class="flex-1 h-full max-w-full flex flex-col relative">
+      <Nav />
+      <div class="relative h-full w-full flex-1 overflow-auto transition-width">
+        <RouterView />
+      </div>
+    </div>
   </div>
 </template>

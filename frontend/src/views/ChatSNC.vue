@@ -82,7 +82,7 @@
                 style="overflow-y: hidden"
               />
               <span>
-                <svg width="55" height="55" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="50" height="50" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="30.1875" cy="29.5" r="29.375" fill="#282A36" />
                   <path d="M30.1875 20.3203V38.6797" stroke="#C3CADB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M21.0078 29.5H39.3672" stroke="#C3CADB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

@@ -10,7 +10,10 @@ from .config import settings
 
 app = FastAPI()
 
-origins = ["*"]
+origins = [
+    "http://chatsnc.vercel.app",
+    "http://localhost:5173",
+]
 
 app.add_middleware(
     CORSMiddleware,

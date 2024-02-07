@@ -11,8 +11,8 @@
         <div class="h-full w-full overflow-y-auto">
           <div class="flex flex-col gap-6 md:w-3/6 md:mx-auto px-4 py-4 md:px-0">
             <div class="flex flex-col">
-              <p class="font-semibold font-open md:text-sm">You</p>
-              <p class="md:text-sm">What is the minimum attendance required in SN college?</p>
+              <p class="font-semibold md:text-sm">You</p>
+              <p class="md:text-sm font-normal">What is the minimum attendance required in SN college?</p>
             </div>
             <div class="flex flex-col gap-1">
               <p class="font-semibold font-open md:text-sm">ChatSNC</p>

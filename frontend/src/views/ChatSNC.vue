@@ -11,55 +11,55 @@
         <div class="h-full w-full overflow-y-auto">
           <div class="flex flex-col gap-6 md:w-3/6 md:mx-auto px-4 py-4 md:px-0">
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">You</p>
+              <p class="font-semibold font-open text-sm">You</p>
               <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">ChatSNC</p>
+              <p class="font-semibold font-open text-sm">ChatSNC</p>
               <p class="font-light text-sm text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
                 minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
               </p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">You</p>
+              <p class="font-semibold font-open text-sm">You</p>
               <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">ChatSNC</p>
+              <p class="font-semibold font-open text-sm">ChatSNC</p>
               <p class="font-light text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
                 minus, alias blanditiis pariatur modi
               </p>
             </div>
             <div>
-              <p class="font-medium font-open text-sm">You</p>
+              <p class="font-semibold font-open text-sm">You</p>
               <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">ChatSNC</p>
+              <p class="font-semibold font-open text-sm">ChatSNC</p>
               <p class="font-light text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
                 minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
               </p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">You</p>
+              <p class="font-semibold font-open text-sm">You</p>
               <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">ChatSNC</p>
+              <p class="font-semibold font-open text-sm">ChatSNC</p>
               <p class="font-light text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
                 minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
               </p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">You</p>
+              <p class="font-semibold font-open text-sm">You</p>
               <p class="font-light text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
             </div>
             <div class="flex flex-col gap-1">
-              <p class="font-medium font-open text-sm">ChatSNC</p>
+              <p class="font-semibold font-open text-sm">ChatSNC</p>
               <p class="font-light text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
                 minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?

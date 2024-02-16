@@ -13,7 +13,7 @@
             <div v-for="message in chat" :key="message.content" class="flex flex-col">
               <div class="flex flex-col">
                 <p class="font-semibold">{{ message.role === 'user' ? 'You' : 'ChatSNC' }}</p>
-                <p class="">{{ message.content }}</p>
+                <p class="whitespace-pre-wrap">{{ message.content }}</p>
               </div>
             </div>
           </div>

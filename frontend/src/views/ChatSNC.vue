@@ -1,70 +1,27 @@
 <template>
   <div class="text-gray-light h-full flex-1 flex flex-col">
     <div class="flex-1 overflow-hidden">
-      <!-- <div class="relative h-full">
+      <div class="relative h-full" v-if="chat.length === 0">
         <div class="absolute left-0 right-0"><div class="h-1.5"></div></div>
         <div class="flex h-full flex-col items-center justify-center">
           <div class="text-2xl font-medium">Ask about SN College...</div>
         </div>
-      </div> -->
-      <div class="relative h-full">
+      </div>
+      <div class="relative h-full" v-else>
         <div class="h-full w-full overflow-y-auto">
           <div class="flex flex-col gap-6 md:w-3/6 md:mx-auto px-4 py-4 md:px-0">
-            <div class="flex flex-col">
-              <p class="font-semibold">You</p>
-              <p class="">What is the minimum attendance required in SN college?</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">ChatSNC</p>
-              <p class="">The minimum attendance required in SN college is 75%.</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">You</p>
-              <p class="">Who is the first HOD of physics department?</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">ChatSNC</p>
-              <p class="">The first HOD of physics department is Dr. K. S. Suresh.</p>
-            </div>
-            <div>
-              <p class="font-semibold">You</p>
-              <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">ChatSNC</p>
-              <p class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
-                minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
-              </p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">You</p>
-              <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">ChatSNC</p>
-              <p class="">
-                Lorem ipsum dolor sit amet consectetur elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit, minus, alias
-                blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
-              </p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">You</p>
-              <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-semibold">ChatSNC</p>
-              <p class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit, minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis Excepturi odit,
-                minus, alias blanditiis pariatur modi, culpa fugit dignissimos nobis iusto facere a corporis placeat similique id ipsam. Asperiores, laborum saepe?
-              </p>
+            <div v-for="message in chat" :key="message.content" class="flex flex-col">
+              <div class="flex flex-col">
+                <p class="font-semibold">{{ message.role === 'user' ? 'You' : 'ChatSNC' }}</p>
+                <p class="">{{ message.content }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="w-full pt-2 md:pt-0">
-      <form class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl">
+      <form class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl" @submit.prevent="sendMessage">
         <div class="relative flex h-full flex-1 items-stretch md:flex-col">
           <div class="flex w-full items-center">
             <div
@@ -74,8 +31,9 @@
                 placeholder="Type your message here..."
                 class="w-full h-7 resize-none border-0 bg-transparent focus:ring-offset-0 focus:outline-none placeholder:font-normal placeholder-gray-light focus:ring-0 focus-visible:ring-0"
                 style="overflow-y: hidden"
+                v-model="message"
               />
-              <span class="cursor-pointer">
+              <span class="cursor-pointer" @click="chat = []">
                 <svg width="50" height="50" viewBox="0 0 66 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d_29_32)">
                     <circle cx="33.1875" cy="33.5" r="29.375" fill="#282A36" />
@@ -109,8 +67,87 @@
 import { useRouter } from 'vue-router'
 import { onMounted } from 'vue'
 import { isTokenExpired } from '../utils'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+
+const base_url = import.meta.env.VITE_API_ENDPOINT
 
 const router = useRouter()
+
+type Chat = {
+  content: string
+  role: string
+}
+
+const loading = ref(false)
+
+const chat: Ref<Chat[]> = ref([])
+const message = ref('')
+
+async function sendMessage() {
+  try {
+    loading.value = true
+    const message_copy = message.value
+    message.value = ''
+    const chat_to_send = chat.value.slice()
+    chat.value.push({
+      role: 'user',
+      content: message_copy,
+    })
+
+    const response = await fetch(
+      `${base_url}chatsnc/generate?` +
+        new URLSearchParams({
+          query: message_copy,
+        }),
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('token'),
+        },
+        body: JSON.stringify(chat_to_send),
+      }
+    )
+
+    // stream
+    const reader = response.body?.getReader()
+
+    const stream = new ReadableStream({
+      start(controller) {
+        chat.value.push({
+          content: '',
+          role: 'assistant',
+        })
+        // The following function handles each data chunk
+        function push() {
+          // "done" is a Boolean and value a "Uint8Array"
+          reader?.read().then(({ done, value }) => {
+            // Is there no more data to read?
+            if (done) {
+              // Tell the browser that we have finished sending data
+              controller.close()
+              return
+            }
+            // Get the data and send it to the browser via the controller
+            const text = new TextDecoder().decode(value)
+            chat.value[chat.value.length - 1].content += text
+            controller.enqueue(value)
+
+            // Continue pushing data
+            push()
+          })
+        }
+        console.log(chat.value)
+        push()
+      },
+    })
+  } catch (e: any) {
+    console.log(e)
+  } finally {
+    loading.value = false
+  }
+}
 
 onMounted(() => {
   const token = localStorage.getItem('token')

@@ -5,6 +5,11 @@ from . import models
 from .database import engine
 from .config import settings
 
+__import__("pysqlite3")
+import sys
+
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+
 
 # models.Base.metadata.create_all(bind=engine)
 

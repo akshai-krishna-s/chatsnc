@@ -25,14 +25,8 @@
         <div class="relative flex h-full flex-1 items-stretch md:flex-col">
           <div class="flex w-full items-center">
             <div
-              class="overflow-hidden flex w-full flex-grow relative border rounded-full border-gray items-center pl-4 pr-1 gap-2 [&:has(input:focus)]:border-gray-light [&:has(input:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)]"
+              class="overflow-hidden flex w-full flex-grow relative border rounded-full border-gray items-center pr-4 gap-2 [&:has(input:focus)]:border-gray-light [&:has(input:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)]"
             >
-              <input
-                placeholder="Type your message here..."
-                class="w-full h-7 resize-none border-0 bg-transparent focus:ring-offset-0 focus:outline-none placeholder:font-normal placeholder-gray-light focus:ring-0 focus-visible:ring-0"
-                style="overflow-y: hidden"
-                v-model="message"
-              />
               <span class="cursor-pointer" @click="chat = []">
                 <svg width="50" height="50" viewBox="0 0 66 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d_29_32)">
@@ -55,6 +49,12 @@
                   </defs>
                 </svg>
               </span>
+              <input
+                placeholder="Type your message here..."
+                class="w-full h-7 resize-none border-0 bg-transparent focus:ring-offset-0 focus:outline-none placeholder:font-normal placeholder-gray-light focus:ring-0 focus-visible:ring-0"
+                style="overflow-y: hidden"
+                v-model="message"
+              />
             </div>
           </div>
         </div>

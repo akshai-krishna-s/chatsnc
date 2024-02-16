@@ -1,13 +1,15 @@
-__import__("pysqlite3")
-import sys
+from .config import settings
 
-sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+if settings.app == "prod":
+    __import__("pysqlite3")
+    import sys
+
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 from fastapi import FastAPI
 from .routers import user, auth, chatsnc
 from fastapi.middleware.cors import CORSMiddleware
 from . import models
 from .database import engine
-from .config import settings
 
 
 # models.Base.metadata.create_all(bind=engine)

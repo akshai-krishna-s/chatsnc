@@ -1,6 +1,8 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from typing import Optional
+from llama_index.llms import MessageRole
+from typing import List
 
 
 class UserCreate(BaseModel):
@@ -33,3 +35,29 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     id: Optional[int] = None
+
+
+class ChatCreateOut(BaseModel):
+    id: int
+
+    class Config:
+        from_attributes = True
+
+
+class ChatOut(BaseModel):
+    id: int
+    history: Optional[List]
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class History(BaseModel):
+    role: MessageRole
+    content: str
+
+
+class HistoryOut(BaseModel):
+    role: str
+    content: str

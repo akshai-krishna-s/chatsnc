@@ -98,6 +98,8 @@ const base_url = import.meta.env.VITE_API_ENDPOINT
 
 const router = useRouter()
 
+const chat_id: Ref<Number> = ref(0)
+
 type Chat = {
   content: string
   role: string
@@ -108,9 +110,51 @@ const loading = ref(false)
 const chat: Ref<Chat[]> = ref([])
 const message = ref('')
 
+async function createChat() {
+  try {
+    // const response = await axios.post('chat/', {
+    //   headers: {
+    //     Authorization: 'Bearer ' + localStorage.getItem('token'),
+    //   },
+    // })
+    // console.log(response.data)
+    const response = await fetch(`${base_url}chat/`, {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
+    })
+    const data = await response.json()
+    return data.id
+  } catch (e: any) {}
+}
+
+async function updateChat(chat_history: any) {
+  try {
+    // const response = await axios.put(`chat/${chat_id}`, {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Authorization: 'Bearer ' + localStorage.getItem('token'),
+    //   },
+    //   data: JSON.stringify(chat_history),
+    // })
+    const response = await fetch(`${base_url}chat/${chat_id.value}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
+      body: JSON.stringify(chat_history),
+    })
+  } catch (e: any) {}
+}
+
 async function sendMessage() {
   try {
     loading.value = true
+    if (chat.value.length === 0) {
+      chat_id.value = await createChat()
+    }
     const message_copy = message.value
     message.value = ''
     const chat_to_send = chat.value.slice()
@@ -120,7 +164,7 @@ async function sendMessage() {
     })
 
     const response = await fetch(
-      `${base_url}chatsnc/generate?` +
+      `${base_url}chat/generate?` +
         new URLSearchParams({
           query: message_copy,
         }),
@@ -151,6 +195,9 @@ async function sendMessage() {
             if (done) {
               // Tell the browser that we have finished sending data
               controller.close()
+
+              // Update the chat after the assistant has finished sending data
+              updateChat(chat.value)
               return
             }
             // Get the data and send it to the browser via the controller

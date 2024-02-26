@@ -37,6 +37,6 @@ To install the project, follow these steps:
 
 To run the project, follow these steps:
 
-1. Navigate to the frontend directory and run `npm run serve` to start the frontend development server.
-2. Navigate to the backend directory and run `uvicorn main:app --reload` to start the backend development server.
+1. Navigate to the frontend directory and run `npm run dev` to start the frontend development server.
+2. Navigate to the backend directory and run `uvicorn app.main:app --reload` to start the backend development server.
 3. Open your browser and go to `http://localhost:5173` to access the web app.

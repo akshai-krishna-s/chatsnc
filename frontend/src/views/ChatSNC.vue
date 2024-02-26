@@ -152,9 +152,7 @@ async function updateChat(chat_history: any) {
 async function sendMessage() {
   try {
     loading.value = true
-    if (chat.value.length === 0) {
-      chat_id.value = await createChat()
-    }
+
     const message_copy = message.value
     message.value = ''
     const chat_to_send = chat.value.slice()
@@ -162,7 +160,9 @@ async function sendMessage() {
       role: 'user',
       content: message_copy,
     })
-
+    if (chat.value.length === 1) {
+      chat_id.value = await createChat()
+    }
     const response = await fetch(
       `${base_url}chat/generate?` +
         new URLSearchParams({

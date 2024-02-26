@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="w-full pt-2 md:pt-0">
-      <form class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl" @submit.prevent="sendMessage">
+      <form class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl" @submit.prevent="loading ? null : sendMessage()">
         <div class="relative flex h-full flex-1 items-stretch md:flex-col">
           <div class="flex w-full items-center">
             <div
@@ -55,7 +55,8 @@
                 style="overflow-y: hidden"
                 v-model="message"
               />
-              <span class="cursor-pointer" @click="sendMessage">
+
+              <span class="cursor-pointer" @click="loading ? null : sendMessage()">
                 <svg width="50" height="50" viewBox="0 0 66 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_d_46_17)">
                     <circle cx="32.9531" cy="33.5" r="29.375" fill="#282A36" />
@@ -197,6 +198,8 @@ async function sendMessage() {
               controller.close()
 
               // Update the chat after the assistant has finished sending data
+              loading.value = false
+
               updateChat(chat.value)
               return
             }
@@ -216,7 +219,6 @@ async function sendMessage() {
   } catch (e: any) {
     console.log(e)
   } finally {
-    loading.value = false
   }
 }
 

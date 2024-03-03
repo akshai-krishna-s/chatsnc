@@ -9,19 +9,25 @@
       </div>
       <div class="relative h-full" v-else>
         <div class="h-full w-full overflow-y-auto">
-          <div class="flex flex-col gap-6 md:w-3/6 md:mx-auto px-4 py-4 md:px-0">
-            <div v-for="message in chat" :key="message.content" class="flex flex-col">
-              <div class="flex flex-col">
-                <p class="font-semibold">{{ message.role === 'user' ? 'You' : 'ChatSNC' }}</p>
-                <p class="whitespace-pre-wrap">{{ message.content }}</p>
+          <div class="flex md:w-9/12 justify-between md:mx-auto px-4 py-4 md:px-0">
+            <div class="flex flex-col gap-6">
+              <div v-for="message in chat" :key="message.content" class="flex flex-col">
+                <div class="flex flex-col">
+                  <p class="font-semibold">{{ message.role === 'user' ? 'You' : 'ChatSNC' }}</p>
+                  <p class="whitespace-pre-wrap">{{ message.content }}</p>
+                </div>
               </div>
+            </div>
+            <div class="max-w-80">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto quibusdam molestiae, exercitationem harum, temporibus consequatur ducimus, pariatur sit beatae aut maiores
+              vero adipisci quo repudiandae tenetur laborum velit quos?
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="w-full pt-2 md:pt-0">
-      <form class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl" @submit.prevent="loading ? null : sendMessage()">
+      <form class="mx-2 flex flex-row gap-3 stretch last:mb-auto md:mx-4 md:last:mb-6 lg:mx-auto lg:w-9/12" @submit.prevent="loading ? null : sendMessage()">
         <div class="relative flex h-full flex-1 items-stretch md:flex-col">
           <div class="flex w-full items-center">
             <div

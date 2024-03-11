@@ -6,7 +6,7 @@ from app.main import app
 from app.config import settings
 from app.database import get_db, Base
 from app.oauth2 import create_access_token
-
+from app.models import Chat
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}_test"
 
@@ -73,3 +73,20 @@ def token(test_user):
 def authorized_client(client, token):
     client.headers["Authorization"] = f"Bearer {token}"
     return client
+
+
+@pytest.fixture
+def test_chats(test_user, session, test_other_user):
+    chats = [
+        {
+            "user_id": test_user["id"],
+            "history": "[]",
+        },
+        {
+            "user_id": test_user["id"],
+            "history": "[]",
+        },
+    ]
+    session.add_all([Chat(**chat) for chat in chats])
+    session.commit()
+    return session.query(Chat).all()

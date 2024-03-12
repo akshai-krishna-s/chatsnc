@@ -6,7 +6,7 @@ website. The frontend of the project is built using [Vue.js](https://vuejs.org/g
 ## Requirements
 
 - Node.js
-- Python 3.11 (Importent)
+- Python 3.11 (Important)
 - pip
 - venv
 

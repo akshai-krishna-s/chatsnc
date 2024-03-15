@@ -8,7 +8,7 @@ export default {
         'gray-dark': '#1D1F28',
         gray: '#737373',
         'gray-medium': '#282A36',
-        'gray-light': '#C3CADB',
+        'gray-light': '#DEDEDE',
         shadow: 'rgba(82, 88, 123, 0.32)',
       },
       fontFamily: {

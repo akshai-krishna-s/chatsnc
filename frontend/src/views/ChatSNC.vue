@@ -7,14 +7,19 @@
           <div class="flex h-full flex-col items-center justify-center">
             <div class="flex flex-col px-4 md:px-0 items-center gap-6">
               <p class="text-2xl md:text-2xl mb-4 text-center text-gray-light font-medium">
-                Ask about the website content of <a href="https://snckollam.ac.in/" target="_blank" class="text-blue-primary">SN College</a>
+                Ask about the website content of <a href="https://snckollam.ac.in/" target="_blank" class="transition text-blue-200 hover:underline hover:text-gray-light">SN College</a>
               </p>
               <div class="flex flex-col md:flex-row gap-2">
-                <button v-for="query in sampleQueries" :key="query" class="text-gray-light px-6 py-5 border text-left border-gray rounded-3xl" @click="submitSampleQuery(query)">
-                  {{ query }}
+                <button
+                  v-for="query in sampleQueries"
+                  :key="query"
+                  class="text-gray-light text-base pl-4 pr-7 hover:shadow-md transition hover:shadow-gray py-5 border text-left border-gray rounded-3xl flex align-top"
+                  @click="submitSampleQuery(query)"
+                >
+                  > {{ query }}
                 </button>
               </div>
-              <p class="text-sm text-gray-light">Please do not enter any private or sensitive information.</p>
+              <p class="text-sm text-gray-light">- Please do not enter any private or sensitive information.</p>
             </div>
           </div>
         </div>

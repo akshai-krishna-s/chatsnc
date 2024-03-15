@@ -7,7 +7,7 @@
           <div class="flex h-full flex-col items-center justify-center">
             <div class="flex flex-col px-4 md:px-0 items-center gap-6">
               <p class="text-2xl md:text-2xl mb-4 text-center text-gray-light font-medium">
-                Ask about the website content of <a href="https://snckollam.ac.in/" target="_blank" class="text-blue-primary underline">SN College</a>
+                Ask about the website content of <a href="https://snckollam.ac.in/" target="_blank" class="text-blue-primary">SN College</a>
               </p>
               <div class="flex flex-col md:flex-row gap-2">
                 <button v-for="query in sampleQueries" :key="query" class="text-gray-light px-6 py-5 border text-left border-gray rounded-3xl" @click="submitSampleQuery(query)">

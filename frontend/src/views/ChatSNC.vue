@@ -9,18 +9,12 @@
       </div>
       <div class="relative h-full" v-else>
         <div class="h-full w-full overflow-y-auto">
-          <div class="flex md:w-9/12 justify-between md:mx-auto px-4 py-4 md:px-0">
-            <div class="flex flex-col gap-6">
-              <div v-for="message in chat" :key="message.content" class="flex flex-col">
-                <div class="flex flex-col">
-                  <p class="font-semibold">{{ message.role === 'user' ? 'You' : 'ChatSNC' }}</p>
-                  <p class="whitespace-pre-wrap">{{ message.content }}</p>
-                </div>
+          <div class="md:mx-auto px-4 py-4 md:px-0">
+            <div v-for="message in chat" :key="message.content" class="flex flex-col">
+              <div class="flex flex-col">
+                <p class="font-semibold">{{ message.role === 'user' ? 'You' : 'ChatSNC' }}</p>
+                <p class="whitespace-pre-wrap">{{ message.content }}</p>
               </div>
-            </div>
-            <div class="max-w-80">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto quibusdam molestiae, exercitationem harum, temporibus consequatur ducimus, pariatur sit beatae aut maiores
-              vero adipisci quo repudiandae tenetur laborum velit quos?
             </div>
           </div>
         </div>

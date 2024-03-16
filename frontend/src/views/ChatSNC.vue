@@ -6,14 +6,14 @@
           <div class="absolute left-0 right-0"><div class="h-1.5"></div></div>
           <div class="flex h-full flex-col items-center justify-center">
             <div class="flex flex-col px-4 md:px-0 items-center gap-6">
-              <p class="text-2xl md:text-2xl mb-4 text-center text-gray-light md:font-medium font-semibold">
+              <p class="text-2xl md:text-2xl mb-4 text-center text-gray-light font-medium">
                 Ask about the website content of <a href="https://snckollam.ac.in/" target="_blank" class="transition text-blue-200 hover:underline hover:text-gray-light">SN College</a>
               </p>
               <div class="flex flex-col md:flex-row gap-2">
                 <button
                   v-for="query in sampleQueries"
                   :key="query"
-                  class="text-gray-light text-base pl-4 pr-7 hover:shadow-md transition hover:shadow-gray py-5 border-2 md:border text-left border-gray rounded-3xl flex align-top font-medium md:font-normal"
+                  class="text-gray-light text-base pl-4 pr-7 hover:shadow-md transition hover:shadow-gray py-5 border text-left border-gray rounded-3xl flex align-top font-normal"
                   @click="submitSampleQuery(query)"
                 >
                   > {{ query }}

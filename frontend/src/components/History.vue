@@ -2,6 +2,9 @@
   <div class="w-full md:w-4/12 hidden md:flex self-start text-gray-light border border-gray mt-8 rounded-md shadow-lg py-3 px-4">
     <div class="flex w-full flex-col gap-1">
       <h1 class="text-lg font-bold">Recent Chats</h1>
+      <div v-if="loading" class="flex w-full justify-center items-center">
+        <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-light"></div>
+      </div>
       <div class="flex w-full flex-col">
         <div
           v-for="(item, index) in history.slice(0, 10)"
@@ -23,6 +26,8 @@ import { ref, onMounted, onRenderTriggered } from 'vue'
 import type { Ref } from 'vue'
 import axios from 'axios'
 
+const loading = ref(false)
+
 type Chat = {
   content: string
   role: string
@@ -41,6 +46,7 @@ function displayString(item: any) {
 
 async function getChats() {
   try {
+    loading.value = true
     const response = await axios.get('chat/', {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
@@ -56,7 +62,10 @@ async function getChats() {
       }
     }
     console.log(history.value)
-  } catch (e: any) {}
+  } catch (e: any) {
+  } finally {
+    loading.value = false
+  }
 }
 
 onMounted(() => {

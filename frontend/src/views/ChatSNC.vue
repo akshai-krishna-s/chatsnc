@@ -5,7 +5,7 @@
         <div class="relative h-full" v-if="chat.length === 0">
           <StartScreen :sampleQueries="sampleQueries" @submitSampleQuery="submitSampleQuery" />
         </div>
-        <div class="relative h-full" v-else>
+        <div class="relative h-full mt-4" v-else>
           <ChatDisplay :chat="chat" />
         </div>
       </div>

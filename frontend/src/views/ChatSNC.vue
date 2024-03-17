@@ -36,7 +36,7 @@
         </form>
       </div>
     </div>
-    <div class="w-4/12 hidden md:flex self-start text-gray-light p-2 border border-gray mt-5 rounded-md">Chat History</div>
+    <History @getChat="getChat" :key="historyKey" />
   </div>
 </template>
 
@@ -48,8 +48,10 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import StartScreen from './../components/OpeningScreen.vue'
 import ChatDisplay from './../components/ChatDisplay.vue'
+import History from './../components/History.vue'
 import IconNew from './../components/Icon/New.vue'
 import IconSent from './../components/Icon/Sent.vue'
+import axios from 'axios'
 
 const base_url = import.meta.env.VITE_API_ENDPOINT
 
@@ -68,6 +70,12 @@ const loading = ref(false)
 
 const chat: Ref<Chat[]> = ref([])
 const message = ref('')
+
+const historyKey = ref(0)
+
+const forceHistoryRerender = () => {
+  historyKey.value += 1
+}
 
 function submitSampleQuery(query: string) {
   message.value = query
@@ -164,6 +172,7 @@ async function sendMessage() {
               loading.value = false
 
               updateChat(chat.value)
+              forceHistoryRerender()
               return
             }
             // Get the data and send it to the browser via the controller
@@ -185,6 +194,20 @@ async function sendMessage() {
   }
 }
 
+async function getChat(id: number) {
+  try {
+    console.log(id)
+    const response = await axios.get(`chat/${id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
+    })
+    console.log(response.data)
+    chat.value = response.data
+    chat_id.value = id
+  } catch (e: any) {}
+}
+
 onMounted(() => {
   const token = localStorage.getItem('token')
   if (!token || isTokenExpired(token)) {
@@ -192,4 +215,3 @@ onMounted(() => {
   }
 })
 </script>
-../components/OpeningScreen.vue../components/ChatDisplay.vue

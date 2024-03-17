@@ -3,7 +3,6 @@
     <div class="text-gray-light h-full flex-1 flex flex-col">
       <div class="flex-1 overflow-hidden">
         <div class="relative h-full" v-if="chat.length === 0">
-          <div class="absolute left-0 right-0"><div class="h-1.5"></div></div>
           <div class="flex h-full flex-col items-center justify-center">
             <div class="flex flex-col px-4 md:px-0 items-center gap-6">
               <p class="text-2xl md:text-2xl mb-4 text-center text-gray-light font-medium">
@@ -13,10 +12,10 @@
                 <button
                   v-for="query in sampleQueries"
                   :key="query"
-                  class="text-gray-light text-base pl-4 pr-7 hover:shadow-md transition hover:shadow-gray py-5 border text-left border-gray rounded-3xl flex align-top font-normal"
+                  class="text-orange-100 text-base pl-6 pr-6 hover:shadow-md transition hover:shadow-gray py-5 border text-left border-orange-100 rounded-3xl flex align-top font-normal"
                   @click="submitSampleQuery(query)"
                 >
-                  > {{ query }}
+                  >> {{ query }}
                 </button>
               </div>
               <p class="text-sm text-gray-light">- Please do not enter any private or sensitive information.</p>

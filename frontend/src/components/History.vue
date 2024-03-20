@@ -8,7 +8,7 @@
       <div class="flex w-full gap-2 flex-col">
         <div
           v-for="(item, index) in history.slice(0, 10)"
-          class="flex w-full cursor-pointer py-2 px-3 hover:bg-gray-medium transition flex-col gap-2 border-b rounded-md bg-gray-medium border-gray hover:border-l-4 hover:border-orange-300"
+          class="flex w-full cursor-pointer py-2 px-3 hover:bg-gray-medium ease-in-out transition-all flex-col gap-2 border-b rounded-md bg-gray-medium border-gray hover:border-l-4 hover:border-orange-300"
           :key="index"
           @click="$emit('getChat', item.id)"
         >

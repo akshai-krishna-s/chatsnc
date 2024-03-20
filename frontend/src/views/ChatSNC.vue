@@ -84,12 +84,6 @@ function submitSampleQuery(query: string) {
 
 async function createChat() {
   try {
-    // const response = await axios.post('chat/', {
-    //   headers: {
-    //     Authorization: 'Bearer ' + localStorage.getItem('token'),
-    //   },
-    // })
-    // console.log(response.data)
     const response = await fetch(`${base_url}chat/`, {
       method: 'POST',
       headers: {
@@ -103,13 +97,6 @@ async function createChat() {
 
 async function updateChat(chat_history: any) {
   try {
-    // const response = await axios.put(`chat/${chat_id}`, {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization: 'Bearer ' + localStorage.getItem('token'),
-    //   },
-    //   data: JSON.stringify(chat_history),
-    // })
     const response = await fetch(`${base_url}chat/${chat_id.value}`, {
       method: 'PUT',
       headers: {

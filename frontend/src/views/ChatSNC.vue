@@ -9,7 +9,6 @@
           <ChatDisplay :chat="chat" />
         </div>
       </div>
-
       <div class="w-full pt-2 md:pt-0">
         <form class="stretch mx-2 flex flex-row gap-3 last:mb-2 md:last:mb-6 lg:max-w-2xl xl:max-w-3xl" @submit.prevent="loading ? null : sendMessage()">
           <div class="relative flex h-full flex-1 items-stretch md:flex-col">

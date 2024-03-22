@@ -36,7 +36,7 @@
         </form>
       </div>
     </div>
-    <History @getChat="getChat" :key="historyKey" />
+    <History @getChat="getChat" />
   </div>
 </template>
 
@@ -70,12 +70,6 @@ const loading = ref(false)
 
 const chat: Ref<Chat[]> = ref([])
 const message = ref('')
-
-const historyKey = ref(0)
-
-const forceHistoryRerender = () => {
-  historyKey.value += 1
-}
 
 function submitSampleQuery(query: string) {
   message.value = query
@@ -159,7 +153,6 @@ async function sendMessage() {
               loading.value = false
 
               updateChat(chat.value)
-              forceHistoryRerender()
               return
             }
             // Get the data and send it to the browser via the controller

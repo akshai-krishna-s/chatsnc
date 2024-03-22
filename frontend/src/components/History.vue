@@ -67,4 +67,8 @@ async function getChats() {
     loading.value = false
   }
 }
+
+onMounted(() => {
+  getChats()
+})
 </script>

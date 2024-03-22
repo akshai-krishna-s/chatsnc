@@ -17,7 +17,7 @@
               <div
                 class="overflow-hidden flex w-full flex-grow relative border rounded-full border-gray items-center gap-2 [&:has(input:focus)]:border-gray-light [&:has(input:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)]"
               >
-                <span class="cursor-pointer" @click="chat = []">
+                <span class="cursor-pointer" @click="clearChat">
                   <IconNew />
                 </span>
                 <input
@@ -36,7 +36,7 @@
         </form>
       </div>
     </div>
-    <History @getChat="getChat" />
+    <History @getChat="getChat" :key="historyKey" />
   </div>
 </template>
 
@@ -71,9 +71,20 @@ const loading = ref(false)
 const chat: Ref<Chat[]> = ref([])
 const message = ref('')
 
+const historyKey = ref(0)
+
+const forceHistoryRerender = () => {
+  historyKey.value += 1
+}
+
 function submitSampleQuery(query: string) {
   message.value = query
   sendMessage()
+}
+
+function clearChat() {
+  chat.value = []
+  forceHistoryRerender()
 }
 
 async function createChat() {

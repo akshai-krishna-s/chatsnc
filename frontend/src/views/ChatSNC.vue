@@ -175,7 +175,6 @@ async function sendMessage() {
             push()
           })
         }
-        console.log(chat.value)
         push()
       },
     })
@@ -187,13 +186,11 @@ async function sendMessage() {
 
 async function getChat(id: number) {
   try {
-    console.log(id)
     const response = await axios.get(`chat/${id}`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
     })
-    console.log(response.data)
     chat.value = response.data
     chat_id.value = id
   } catch (e: any) {}

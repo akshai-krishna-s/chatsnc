@@ -16,7 +16,7 @@ os.environ["OPENAI_API_KEY"] = settings.openai_api_key
 db = chromadb.PersistentClient(path="./app/engine/chatsnc/chroma_db")
 
 # get collection
-chroma_collection = db.get_collection("college_laws")
+chroma_collection = db.get_collection("sn_college")
 
 # assign chroma as the vector_store to the context
 vector_store = ChromaVectorStore(chroma_collection=chroma_collection)

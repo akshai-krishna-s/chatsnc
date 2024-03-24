@@ -52,7 +52,6 @@ async function getChats() {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
     })
-    console.log(response.data)
     for (const item of response.data) {
       if (item.history) {
         history.value.push({
@@ -61,7 +60,6 @@ async function getChats() {
         })
       }
     }
-    console.log(history.value)
   } catch (e: any) {
   } finally {
     loading.value = false

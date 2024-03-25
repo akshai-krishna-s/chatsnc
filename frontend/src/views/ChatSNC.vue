@@ -64,7 +64,7 @@ type Chat = {
   role: string
 }
 
-const sampleQueries = ['What is the minimum attendance required in SN College?', 'Who was the first HOD of physics department?', 'What are the rules regarding mobile phones in SN College?']
+const sampleQueries = ['What is the minimum attendance required in SN College?', 'Who was the first HOD of physics department?', 'What are the courses provided in Biotechnology Department?']
 
 const loading = ref(false)
 

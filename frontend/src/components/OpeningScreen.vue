@@ -6,7 +6,7 @@
       </p>
       <div class="flex flex-col md:flex-row gap-2">
         <button
-          v-for="query in sampleQueries"
+          v-for="query in randomQueries"
           :key="String(query)"
           class="text-orange-100 text-base pl-6 pr-6 hover:shadow-md transition hover:shadow-gray py-5 border text-left border-orange-100 rounded-3xl flex align-top font-normal"
           @click="$emit('submitSampleQuery', query)"
@@ -20,10 +20,16 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
-  sampleQueries: {
-    type: Array,
-    required: true,
-  },
-})
+const sampleQueries = [
+  'What is the minimum attendance required in SN College?',
+  'Who was the first HOD of physics department?',
+  'What are the courses provided in Biotechnology Department?',
+  'How to Apply for E-Grantz and who can apply?',
+  'What are the facilities available in the Hostel?',
+  'What are the scholarships available for students?',
+  'Who are the current principal and manager of SN College?',
+  'where is Multi Gym located in SN College?',
+]
+
+const randomQueries = sampleQueries.sort(() => Math.random() - Math.random()).slice(0, 3)
 </script>

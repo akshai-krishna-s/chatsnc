@@ -3,7 +3,7 @@
     <div class="text-gray-light h-full flex-1 flex flex-col">
       <div class="flex-1 overflow-hidden">
         <div class="relative h-full" v-if="chat.length === 0">
-          <StartScreen :sampleQueries="sampleQueries" @submitSampleQuery="submitSampleQuery" />
+          <StartScreen @submitSampleQuery="submitSampleQuery" />
         </div>
         <div class="relative h-full md:mt-4 md:pb-5" v-else>
           <ChatDisplay :chat="chat" />
@@ -63,8 +63,6 @@ type Chat = {
   content: string
   role: string
 }
-
-const sampleQueries = ['What is the minimum attendance required in SN College?', 'Who was the first HOD of physics department?', 'What are the courses provided in Biotechnology Department?']
 
 const loading = ref(false)
 

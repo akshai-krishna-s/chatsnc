@@ -37,13 +37,9 @@ def generate_chat(
     user: schemas.UserOut = Depends(oauth2.get_current_user),
 ):
     chat_history = [
-        # ChatMessage(
-        #     role=MessageRole.SYSTEM,
-        #     content="Please only answer questions if the answer is certain based on the given context. Do not answer if unsure. For inquiries about the current principal or similar topics, answer only if sure. The current principal of SN College is Dr.S.V.Manoj. Avoid answering current affairs questions without certainty.",
-        # ),
         ChatMessage(
             role=MessageRole.USER,
-            content="Hello assistant, we are having a insightful discussion about Rules of SN College today.",
+            content="Hello assistant, we are having a insightful discussion about Rules of SN College today. Do not answer questions if you are not sure.",
         ),
         ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
     ]

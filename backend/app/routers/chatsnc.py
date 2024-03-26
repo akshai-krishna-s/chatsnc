@@ -39,7 +39,7 @@ def generate_chat(
     chat_history = [
         ChatMessage(
             role=MessageRole.USER,
-            content="Hello assistant, we are having a insightful discussion about Rules of SN College today. Do not answer questions if you are not sure.",
+            content="Hello assistant, we are having a insightful discussion about SN College today. All the questions are about SN College.",
         ),
         ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
     ]

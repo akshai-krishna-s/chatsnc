@@ -1,6 +1,4 @@
 from app import schemas
-import pytest
-import json
 
 
 def test_get_all_chats(authorized_client, test_chats):

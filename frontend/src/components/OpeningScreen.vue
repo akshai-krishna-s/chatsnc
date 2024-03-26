@@ -24,7 +24,7 @@ const sampleQueries = [
   'What is the minimum attendance required in SN College?',
   'Who was the first HOD of physics department?',
   'What are the courses provided in Biotechnology Department?',
-  'How to Apply for E-Grantz and who can apply?',
+  'How to apply for E-Grantz and who can apply?',
   'What are the facilities available in the Hostel?',
   'What are the scholarships available for students?',
   'Who are the current principal and manager of SN College?',

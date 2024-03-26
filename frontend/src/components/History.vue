@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onRenderTriggered } from 'vue'
+import { ref, onMounted } from 'vue'
 import type { Ref } from 'vue'
 import axios from 'axios'
 
@@ -53,7 +53,7 @@ async function getChats() {
       },
     })
     for (const item of response.data) {
-      if (item.history) {
+      if (item.history && item.history.length > 0) {
         history.value.push({
           id: item.id,
           chats: item.history,

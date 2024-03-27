@@ -43,10 +43,10 @@ def chat(query, chat_history):
     global index
     chat_engine = index.as_chat_engine(
         streaming=True,
-        chat_mode="condense_question",  # type: ignore
+        chat_mode="condense_plus_context",  # type: ignore
         context_prompt=(
             "You are a chatbot who can talk"
-            " about SN College. Do not answer questions that are not about SN College and only answer questions if the answer is in the context."
+            " about SN College. Do not answer if the question is not about SN College or the answer is not in the context."
             "Here are the relevant documents for the context:\n"
             "{context_str}"
             "\nInstruction: Use the previous chat history, or the context above, to interact and help the user."

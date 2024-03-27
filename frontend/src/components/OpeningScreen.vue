@@ -28,7 +28,6 @@ const sampleQueries = [
   'What are the facilities available in the Hostel?',
   'What are the scholarships available for students?',
   'Who are the current principal and manager of SN College?',
-  'Where is Multi Gym located in SN College?',
 ]
 
 const randomQueries = sampleQueries.sort(() => Math.random() - Math.random()).slice(0, 3)

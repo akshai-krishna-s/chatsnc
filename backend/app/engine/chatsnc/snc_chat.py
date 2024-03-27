@@ -43,7 +43,7 @@ def chat(query, chat_history):
     global index
     chat_engine = index.as_chat_engine(
         streaming=True,
-        chat_mode="condense_plus_context",  # type: ignore
+        chat_mode="condense_question",  # type: ignore
         context_prompt=(
             "You are a chatbot who can talk"
             " about SN College. Do not answer questions that are not about SN College and only answer questions if the answer is in the context."

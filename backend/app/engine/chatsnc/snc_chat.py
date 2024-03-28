@@ -46,7 +46,7 @@ def chat(query, chat_history):
         chat_mode="condense_plus_context",  # type: ignore
         context_prompt=(
             "You are a chatbot who can talk"
-            " about SN College. Do not answer if the question is not about SN College or the answer is not in the context. Do not hallucinate."
+            " about SN College. Do not answer if the question is not about SN College or the answer to the specific question is not in the context. Do not hallucinate."
             "Here are the relevant documents for the context:\n"
             "{context_str}"
             "\nInstruction: Use the previous chat history, or the context above, to interact and help the user."

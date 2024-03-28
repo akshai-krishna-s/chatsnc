@@ -37,11 +37,11 @@ def generate_chat(
     user: schemas.UserOut = Depends(oauth2.get_current_user),
 ):
     chat_history = [
-        ChatMessage(
-            role=MessageRole.USER,
-            content="Hello assistant, we are having a insightful discussion about SN College today. All the questions are about SN College.",
-        ),
-        ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
+        # ChatMessage(
+        #     role=MessageRole.USER,
+        #     content="Hello assistant, we are having a insightful discussion about SN College today. All the questions are about SN College.",
+        # ),
+        # ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
     ]
     for h in history:
         chat_history.append(ChatMessage(role=h.role, content=h.content))

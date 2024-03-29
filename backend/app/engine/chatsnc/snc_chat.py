@@ -2,11 +2,7 @@ import chromadb
 from llama_index.indices import VectorStoreIndex
 from llama_index.vector_stores import ChromaVectorStore
 from llama_index.storage.storage_context import StorageContext
-from llama_index import ServiceContext, set_global_service_context
-from llama_index.llms import Cohere
-from llama_index.embeddings import OpenAIEmbedding
 
-from llama_index.llms import Ollama
 
 from ...config import settings
 import os
@@ -45,13 +41,14 @@ def chat(query, chat_history):
         streaming=True,
         chat_mode="condense_plus_context",  # type: ignore
         context_prompt=(
-            "You are a chatbot who can talk"
+            "You are ChatSNC, a chatbot developed by Abil Asok, Indrajith R, Akshai Krishna S and Abhinav Manoj, you can talk"
             " about SN College. Do not answer if the question is not about SN College or the answer to the specific question is not in the context. Do not hallucinate."
             "Here are the relevant documents for the context:\n"
             "{context_str}"
             "\nInstruction: Use the previous chat history, or the context above, to interact and help the user."
         ),
         verbose=False,
+        chat_history=chat_history,
     )
 
-    return chat_engine.stream_chat(query, chat_history=chat_history)
+    return chat_engine.stream_chat(query)

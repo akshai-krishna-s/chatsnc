@@ -1,16 +1,14 @@
 from .. import models, schemas
 from ..database import get_db
-from sqlalchemy import func
 from sqlalchemy.orm import Session
 from typing import List
-from fastapi import status, HTTPException, Depends, Response, APIRouter
+from fastapi import status, HTTPException, Depends, APIRouter
 from .. import oauth2
-from typing import List, Optional
+from typing import List
 from ..engine.chatsnc import snc_chat
-from pydantic import BaseModel
 import asyncio
 from fastapi.responses import StreamingResponse
-from llama_index.llms import ChatMessage, MessageRole
+from llama_index.llms import ChatMessage
 import json
 from fastapi.encoders import jsonable_encoder
 
@@ -36,13 +34,7 @@ def generate_chat(
     db: Session = Depends(get_db),
     user: schemas.UserOut = Depends(oauth2.get_current_user),
 ):
-    chat_history = [
-        # ChatMessage(
-        #     role=MessageRole.USER,
-        #     content="Hello assistant, we are having a insightful discussion about SN College today. All the questions are about SN College.",
-        # ),
-        # ChatMessage(role=MessageRole.ASSISTANT, content="Okay, sounds good."),
-    ]
+    chat_history = []
     for h in history:
         chat_history.append(ChatMessage(role=h.role, content=h.content))
     response = snc_chat.chat(query, chat_history)

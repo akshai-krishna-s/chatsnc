@@ -20,6 +20,7 @@
                 <span class="cursor-pointer" @click="clearChat">
                   <IconNew />
                 </span>
+
                 <input
                   placeholder="Type your message here..."
                   class="w-full h-7 resize-none border-0 bg-transparent focus:ring-offset-0 focus:outline-none placeholder:font-normal placeholder-gray-light focus:ring-0 focus-visible:ring-0"
